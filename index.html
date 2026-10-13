@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c111b">
+    <title>Coinboard · 바이낸스 시세</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2366e3b4'/%3E%3Cpath d='M8 23V15M16 23V8M24 23V11' stroke='%230c111b' stroke-width='4'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="dashboard">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Coinboard 홈"><span class="brand-icon" aria-hidden="true">▥</span> coinboard<span class="brand-dot">.</span></a>
+        <span class="market-label">BINANCE <span>SPOT MARKET</span></span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div><p class="eyebrow">YOUR DAILY MARKET PULSE</p><h1 id="page-title">시장의 흐름을,<br>한눈에.</h1><p class="subtitle">비트코인과 이더리움의 지금을 확인하세요.</p></div>
+          <div class="refresh-panel"><span id="connection-status" class="status" role="status">시세 연결 중</span><button id="refresh-button" type="button"><span aria-hidden="true">↻</span> 새로고침</button></div>
+        </section>
+
+        <div id="error-message" class="error-message" role="alert" hidden></div>
+
+        <section class="market-section" aria-labelledby="market-title">
+          <div class="section-heading"><h2 id="market-title">주요 코인 <span>02</span></h2><span class="unit-label">현물 · USDT 기준</span></div>
+          <div class="coin-grid">
+            <article class="coin-card" id="BTCUSDT" aria-labelledby="btc-title">
+              <div class="coin-heading"><div class="coin-identity"><span class="coin-icon bitcoin" aria-hidden="true">₿</span><div><h3 id="btc-title">Bitcoin</h3><span class="pair">BTC / USDT</span></div></div><span class="coin-tag">비트코인</span></div>
+              <p class="price-label">현재 가격</p><div class="price-line"><span class="price" data-field="price">—</span><span class="currency">USDT</span></div>
+              <div class="change-line"><span class="change" data-field="change">—</span><span class="muted">최근 24시간</span></div>
+              <div class="volume-section"><div><span class="volume-label">24시간 거래량</span><p><span data-field="volume">—</span> <span class="volume-unit">BTC</span></p></div><span class="volume-mark" aria-hidden="true">▂ ▅ ▃ ▇ ▅</span></div>
+              <div class="quote-volume">거래대금 <span data-field="quoteVolume">—</span> USDT</div>
+            </article>
+            <article class="coin-card" id="ETHUSDT" aria-labelledby="eth-title">
+              <div class="coin-heading"><div class="coin-identity"><span class="coin-icon ethereum" aria-hidden="true">◆</span><div><h3 id="eth-title">Ethereum</h3><span class="pair">ETH / USDT</span></div></div><span class="coin-tag">이더리움</span></div>
+              <p class="price-label">현재 가격</p><div class="price-line"><span class="price" data-field="price">—</span><span class="currency">USDT</span></div>
+              <div class="change-line"><span class="change" data-field="change">—</span><span class="muted">최근 24시간</span></div>
+              <div class="volume-section"><div><span class="volume-label">24시간 거래량</span><p><span data-field="volume">—</span> <span class="volume-unit">ETH</span></p></div><span class="volume-mark eth-mark" aria-hidden="true">▂ ▅ ▃ ▇ ▅</span></div>
+              <div class="quote-volume">거래대금 <span data-field="quoteVolume">—</span> USDT</div>
+            </article>
+          </div>
+        </section>
+
+        <div class="update-bar"><span><span class="timer-icon" aria-hidden="true">◷</span> 30초마다 자동 갱신 <span class="next-update" id="next-update"></span></span><span>마지막 성공 갱신 <time id="last-updated">—</time></span></div>
+        <aside class="info-note"><span class="info-icon" aria-hidden="true">i</span><p>바이낸스 공개 시장 데이터를 사용합니다. 등락률과 거래량은 최근 24시간 기준이며, USDT는 미국 달러 가치를 추종하는 코인입니다.</p></aside>
+      </main>
+      <footer><span>COINBOARD <span class="footer-divider">/</span> 작은 화면, 넓은 시장.</span><span>데이터 제공 Binance · 투자 참고용</span></footer>
+    </div>
+  </body>
+</html>
